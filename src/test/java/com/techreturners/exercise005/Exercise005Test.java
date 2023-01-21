@@ -51,6 +51,7 @@ public class Exercise005Test {
         assertFalse(ex005.isPangram("the quick brown fo jumps over the lazy dog"));
     }
 
+
     //@Disabled("You can remove this @Disabled annotation to run the test")
     @Test
     public void checkSentenceWithMissingLetterHIsNotAPangram() {
@@ -68,5 +69,35 @@ public class Exercise005Test {
     public void checkSentenceWithNumbersIsAPangram() {
         assertTrue(ex005.isPangram("the 1 quick brown fox jumps over the 2 lazy dogs"));
     }
+// additional test cases added below
+    @Test
+    public void checkSentenceWithSpecialCharactersIsAPangram() {
+        assertTrue(ex005.isPangram("the 1 *quick brown fox* jumps over the lazy dogs"));
+    }
 
+    @Test
+    public void checkSentenceWithLessThan26IsNotAPangram() {
+        assertFalse(ex005.isPangram("the lazy dogs"));
+    }
+
+    @Test
+    public void checkSentenceWithExtensiveLengthIsAPangram() {
+        assertTrue(ex005.isPangram("The Five boXing  Five boXing wiZards wiZards wiZards wiZards wiZards something wrong Jump QuicklY  hhhhhh keyboardjumping"));
+    }
+
+    @Test
+    public void checkSentenceFromPangramWebsiteIsAPangram() {
+        assertTrue(ex005.isPangram("A quivering Texas zombie fought republic linked jewelry."));
+    }
+
+    @Test
+    public void checkPerfectLowerCaseSentenceTypoIsNotAPangram() {
+        assertFalse(ex005.isPangram("abcdefghijklmmopqrstuvwxyz"));
+    }
+
+    @Test
+    public void checkSentenceIrregularSpaceIsAPangram() {
+        assertTrue(ex005.isPangram("tuvwxyz abcd   efghi jklm         nopq         rs"));
+    }
 }
+

@@ -7,7 +7,7 @@ import java.time.LocalTime;
 public class Exercise004 {
 
     LocalDateTime moment;
-    static final long gSec = (long) Math.pow(10, 9);
+    static final long GIGASECOND = (long) Math.pow(10, 9); //Giga seconds of time
 
     public Exercise004(LocalDate date) {
         //set moment being start time of the date parameter
@@ -20,11 +20,11 @@ public class Exercise004 {
     }
 
     public LocalDateTime getDateTime() throws UnsupportedOperationException {
-        if (moment == null){
+        if (moment == null) {
             throw new UnsupportedOperationException("Start moment has not been defined");
         }
         //add 1 giga seconds being 10 power 9 to the moment time for this object
-        return moment.plusSeconds(gSec);
+        return moment.plusSeconds(GIGASECOND);
 
     }
 }

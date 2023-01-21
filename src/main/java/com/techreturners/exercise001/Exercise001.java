@@ -21,14 +21,14 @@ public class Exercise001 {
 
     public String reverse(String sentence) {
         // Add your code here
-        String revStn = "";
+        String revSentence = "";
         char[] chars = sentence.toCharArray();
         int lastIdx = chars.length -1 ;
         for (int i=0; i< chars.length; i++)
         {
-            revStn = revStn + chars[lastIdx -i];
+            revSentence = revSentence + chars[lastIdx -i];
         }
-        return revStn;
+        return revSentence;
     }
 
     public int countLinuxUsers(List<User> users) {
@@ -37,7 +37,7 @@ public class Exercise001 {
         for (int i=0; i<users.size(); i++)
         {
             //System.out.println(users.get(i).getType());
-            if (users.get(i).getType() == "Linux") {
+            if (users.get(i).getType().equalsIgnoreCase("Linux")) {
                 count++;
             }
         }

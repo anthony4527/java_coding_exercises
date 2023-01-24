@@ -20,13 +20,8 @@ public class Exercise001 {
     }
 
     public String reverse(String sentence) {
-        String revSentence = "";
-        char[] chars = sentence.toCharArray();
-        int lastIdx = chars.length - 1;
-        for (int i = 0; i < chars.length; i++) {
-            revSentence = revSentence + chars[lastIdx - i];
-        }
-        return revSentence;
+        StringBuilder stringBuild = new StringBuilder(sentence);
+        return stringBuild.reverse().toString();
     }
 
     public int countLinuxUsers(List<User> users) {

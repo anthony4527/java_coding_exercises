@@ -3,6 +3,7 @@ package com.techreturners.exercise001;
 
 import java.util.List;
 
+
 public class Exercise001 {
 
     static final int BASE = 100;
@@ -25,12 +26,6 @@ public class Exercise001 {
     }
 
     public int countLinuxUsers(List<User> users) {
-        int count = 0;
-        for (int i = 0; i < users.size(); i++) {
-            if (users.get(i).getType().equalsIgnoreCase("Linux")) {
-                count++;
-            }
-        }
-        return count;
+        return (int)users.stream().filter(usr -> usr.getType().equalsIgnoreCase("Linux")).count();
     }
 }
